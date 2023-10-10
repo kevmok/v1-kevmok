@@ -9,7 +9,7 @@ const TextLink: React.FC<TextLinkProps> = ({ children, link }) => {
 			href={link}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="font-medium text-slate-200 hover:text-primary focus-visible:text-primary"
+			className="font-medium text-slate-300 hover:text-primary focus-visible:text-primary duration-300"
 		>
 			{children}
 		</a>
