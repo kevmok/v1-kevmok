@@ -1,10 +1,13 @@
+import About from '@/components/About';
 import Hero from '@/components/Hero';
-import ScrollablePage from '@/components/ScrollablePage';
+import Socials from '@/components/Socials';
 
 export default function Home() {
 	return (
 		<div>
 			<Hero />
+			<Socials />
+			<About />
 			{/* <ScrollablePage /> */}
 		</div>
 	);
