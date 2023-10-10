@@ -1,5 +1,11 @@
+import Hero from '@/components/Hero';
+import ScrollablePage from '@/components/ScrollablePage';
+
 export default function Home() {
 	return (
-		<main className="grid place-items-center h-screen">I love Next.js</main>
+		<div>
+			<Hero />
+			{/* <ScrollablePage /> */}
+		</div>
 	);
 }
