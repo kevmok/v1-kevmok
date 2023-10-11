@@ -15,12 +15,10 @@ module.exports = {
 				'2xl': '1400px',
 			},
 		},
-		colors: {
-			'lighter-navy': '#111f43',
-			navy: '#0a192f',
-		},
 		extend: {
 			colors: {
+				'lighter-navy': '#111f43',
+				navy: '#0a192f',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
