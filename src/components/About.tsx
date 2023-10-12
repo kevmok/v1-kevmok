@@ -8,10 +8,10 @@ const About = () => {
 				<div>
 					<p className="mb-4 text-slate-400 font-light">
 						The adventure began in 2019 when I delved into crafting custom
-						private Discord bots for my server. This initial foray sparked my
+						private Discord bots for my server. This initial venture sparked my
 						journey into the realms of coding and, subsequently, web
-						development. Fast forward to the present, and I've had the honor of
-						developing software solutions for a{' '}
+						development. . Fast forward to the present, and I've had the honor
+						of developing software solutions for a{' '}
 						<TextLink link="https://rbm.q2labsolutions.com/">
 							pioneering biotech enterprise
 						</TextLink>
