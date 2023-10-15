@@ -18,9 +18,9 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" className="bg-gradient-to-tr from-lighter-navy to-navy">
+		<html lang="en" className="bg-navy">
 			<body
-				className={`${inter.className} bg-gradient-to-br from-lighter-navy to-navy`}
+				className={`${inter.className} bg-gradient-to-br from-lighter-navy via-navy via-25% to-navy`}
 			>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<Container>{children}</Container>

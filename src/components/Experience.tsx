@@ -1,6 +1,6 @@
-import exp from 'constants';
 import { Badge } from './ui/badge';
 import Heading from './ui/heading';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 const experienceList = [
 	{
@@ -8,7 +8,7 @@ const experienceList = [
 		company: 'Moveworks',
 		date: '2022 — Present',
 		description:
-			'Led AI platform optimizations, increasing resolution rates by 36% and efficiency by 18.2%. Developed tools reducing debugging time, and automated 10+ workflows. Guided cross-functional projects impacting 100+ organizations and led early testing of new AI features, earning a promotion to Subject Matter Expert. Provided technical training to team members, enhancing service delivery and reliability.',
+			'Led AI platform optimizations, increasing customer resolution rates by 36% and efficiency by 18.2%. Developed tools reducing debugging time, and automated 10+ workflows. Guided cross-functional projects impacting 100+ organizations and led early testing of new AI features, earning a promotion to Subject Matter Expert. Provided technical training to team members, enhancing service delivery and reliability.',
 		website: 'https://www.moveworks.com/',
 		skills: ['Python', 'JavaScript'],
 	},
@@ -17,7 +17,7 @@ const experienceList = [
 		company: 'Rooniverse',
 		date: '2022 — 2022',
 		description:
-			'Implemented blockchain functionalities on the web platform, enabling NFT staking, looting, and questing via Solana and modern frameworks. Developed a Discord bot for streamlined data access outside the web portal. Spearheaded full-stack architecture endeavors and crafted responsive front-end user experiences.',
+			'Implemented blockchain functionalities on the web platform, enabling NFT staking, looting, and questing via Solana and modern frameworks. Developed a Discord bot for streamlined Blockchain data access outside the web portal. Spearheaded full-stack architecture endeavors and crafted responsive front-end user experiences.',
 		website: 'https://www.playrooniverse.com/',
 		skills: ['Typescript', 'React', 'Solana', 'Next.js'],
 	},
@@ -54,15 +54,16 @@ const Experience = () => {
 							{experience.date}
 						</h3>
 						<div className="flex flex-col">
-							<h2 className="font-medium text-slate-300 leading-snug items-baseline">
+							<h2 className="flex-row font-medium text-slate-300 leading-snug items-baseline">
 								<a
 									href={experience.website}
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label={`${experience.title} - ${experience.company}`}
-									className="inline-flex font-medium leading-tight hover:text-primary focus:text-primary duration-300"
+									className="group font-medium leading-tight hover:text-primary focus:text-primary duration-300"
 								>
-									{experience.title} · {experience.company}
+									{experience.title} · {experience.company}{' '}
+									<ArrowUpRight className=" inline-block h-4 w-4 shrink-0 group-hover:-translate-y-0.5 group-hover:translate-x-1 motion-reduce:transition-none translate-y-px transition-transform" />
 								</a>
 							</h2>
 							<p className="mt-2 text-sm leading-normal font-light text-slate-400 tracking-wide">
@@ -81,6 +82,18 @@ const Experience = () => {
 						</div>
 					</div>
 				))}
+				<div className="mt-12">
+					<a
+						href="/resume.pdf"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="resume link"
+						className="group font-medium leading-tight hover:text-primary focus:text-primary duration-300"
+					>
+						View Full Résumé
+						<ArrowRight className="ml-1 inline-block h-4 w-4 shrink-0 group-hover:translate-x-2 motion-reduce:transition-none translate-y-px transition-transform" />
+					</a>
+				</div>
 			</Heading>
 		</main>
 	);
