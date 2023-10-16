@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import React from 'react';
 import { Button } from './ui/button';
@@ -17,7 +19,12 @@ const socialList = [
 ];
 const Socials = () => {
 	return (
-		<div className="mt-6 items-center">
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ delay: 0.8 }}
+			className="mt-6 items-center"
+		>
 			{socialList.map((social, index) => (
 				<Button
 					key={`${social.social}-${index}`}
@@ -31,7 +38,7 @@ const Socials = () => {
 					</a>
 				</Button>
 			))}
-		</div>
+		</motion.div>
 	);
 };
 
