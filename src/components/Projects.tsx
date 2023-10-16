@@ -1,6 +1,6 @@
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Badge } from './ui/badge';
 import Heading from './ui/heading';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
 const projectList = [
 	{
