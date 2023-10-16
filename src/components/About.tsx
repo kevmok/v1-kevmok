@@ -29,11 +29,8 @@ const About = () => {
 						Currently, my endeavors are channeled towards contributing value at
 						Moveworks. When the workday winds down, my passion for sharing
 						knowledge takes the forefront. I design and deliver{' '}
-						<TextLink link="https://youtube.com/@LinkedKev?si=lDvae9Dd1OZ_gtH1">
-							video tutorials
-						</TextLink>
-						, providing a ladder for aspiring coders to climb and elevate their
-						prowess.
+						<TextLink link="#">video tutorials</TextLink>, providing a ladder
+						for aspiring coders to climb and elevate their prowess.
 					</p>
 					<p className="mb-4 text-slate-400 font-light">
 						Beyond the code, my world orbits around leisure strolls in the park
