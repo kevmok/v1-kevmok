@@ -10,7 +10,7 @@ const Heading: React.FC<HeadingProps> = ({ children, title }) => {
 		<motion.section
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
-			transition={{ duration: 3 }}
+			transition={{ duration: 1.5 }}
 			id={title}
 			className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
 		>
