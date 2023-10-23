@@ -4,6 +4,13 @@ import Heading from './ui/heading';
 
 const projectList = [
 	{
+		title: 'Discord Stock Analyst Broadcaster',
+		description:
+			'An adept Discord bot empowering stock analysts to broadcast their plays across multiple servers, reaching a diverse community of 5000 users. Through a centralized broadcasting system, this bot ensures timely dissemination of market insights, establishing a real-time information exchange hub for individuals keen on the latest market trends.',
+		tools: ['TypeScript', 'Discord.js', 'Mongo DB'],
+		img: '/images/discordv2.png',
+	},
+	{
 		title: 'ElysiaJS API Starter: A Drizzle ORM Boosted Template',
 		description:
 			'A ready-to-go template for kickstarting Bun REST API projects with ElysiaJS & Drizzle ORM, streamlining the setup for developers diving into this tech stack.',
