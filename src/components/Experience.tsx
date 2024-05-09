@@ -4,13 +4,13 @@ import Heading from './ui/heading';
 
 const experienceList = [
 	{
-		title: 'Customer Success Engineer',
+		title: 'Software & Senior Customer Success Engineer',
 		company: 'Moveworks',
 		date: '2022 — Present',
 		description:
 			'Led AI platform optimizations, increasing customer resolution rates by 36% and efficiency by 18.2%. Developed tools reducing debugging time, and automated 10+ workflows. Guided cross-functional projects impacting 100+ organizations and led early testing of new AI features, earning a promotion to Subject Matter Expert. Provided technical training to team members, enhancing service delivery and reliability.',
 		website: 'https://www.moveworks.com/',
-		skills: ['Python', 'JavaScript', 'Kafka'],
+		skills: ['Python', 'JavaScript', 'Kafka', 'Django', 'Starlark', 'Bazel'],
 	},
 	{
 		title: 'Full Stack Engineer (Contract)',
