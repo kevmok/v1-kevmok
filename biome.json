@@ -7,14 +7,35 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true
-		}
+		},
+		"ignore": [
+			"src/routeTree.gen.ts",
+			"dist/*",
+			"*.db",
+			"*.md",
+			"*.lockb",
+			"node_modules",
+			".next",
+			".vinxi",
+			".output"
+		]
 	},
 	"formatter": {
 		"enabled": true,
 		"formatWithErrors": false,
 		"indentStyle": "tab",
 		"indentSize": 2,
-		"ignore": ["dist/*", "*.db", "*.md", "*.lockb", "node_modules,", ".next"]
+		"ignore": [
+			"src/routeTree.gen.ts",
+			"dist/*",
+			"*.db",
+			"*.md",
+			"*.lockb",
+			"node_modules",
+			".next",
+			".vinxi",
+			".output"
+		]
 	},
 	"javascript": {
 		"formatter": {
