@@ -1,13 +1,30 @@
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import {
+	HeadContent,
+	Link,
+	Outlet,
+	createRootRoute,
+} from '@tanstack/react-router';
 import '../styles/app.css';
 
 export const Route = createRootRoute({
 	component: RootComponent,
+	head: () => ({
+		meta: [
+			{
+				name: 'viewport',
+				content: 'width=device-width, initial-scale=1',
+			},
+			{
+				charSet: 'utf-8',
+			},
+		],
+	}),
 });
 
 function RootComponent() {
 	return (
 		<div className="min-h-screen flex flex-col p-8">
+			<HeadContent />
 			<header className="max-w-[60ch] mx-auto w-full mb-12">
 				<nav className="flex justify-between items-center">
 					<Link
