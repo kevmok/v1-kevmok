@@ -1,0 +1,12 @@
+Home Page Meta Tags:
+<title>Kevin Mok</title>
+<meta name="description" content="Developer and writer."/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="utf-8"/>
+
+Blog Post Meta Tags:
+<meta name="description" content="My first blog post using MDX and Content Collections"/>
+
+Projects Page Meta Tags:
+<title>Projects | Kevin Mok</title>
+<meta name="description" content="Selected projects by Kevin Mok."/>

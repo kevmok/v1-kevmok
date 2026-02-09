@@ -1,0 +1,7 @@
+
+=== ROUTE STATUS CODES ===
+Home (/): 200
+Blog (/n/1): 200
+Projects: 200
+Sitemap: 200
+404 Test (/n/999): 404

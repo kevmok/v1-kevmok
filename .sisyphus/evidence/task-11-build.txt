@@ -1,0 +1,43 @@
+$ vite build && tsc --noEmit
+Starting content-collections with config content-collections.ts
+Starting content-collections with config content-collections.ts
+Starting content-collections with config content-collections.ts
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+Start initial build
+build started ...
+[CC DEPRECATED]: The implicit addition of a content property to schemas is deprecated.
+Please add an explicit content property to your schema.
+For more information, see:
+https://content-collections.dev/docs/deprecations/implicit-content-property
+... finished build of 1 collection and 1 document in 7ms
+transforming...
+[32m✓[39m 169 modules transformed.
+rendering chunks...
+computing gzip size...
+[2mdist/client/[22m[2massets/[22m[35mmain-CU0UA2ER.css          [39m[1m[2m 13.16 kB[22m[1m[22m[2m │ gzip:   3.43 kB[22m
+[2mdist/client/[22m[2massets/[22m[36msitemap_._xml-C0sfswVS.js  [39m[1m[2m  0.42 kB[22m[1m[22m[2m │ gzip:   0.33 kB[22m
+[2mdist/client/[22m[2massets/[22m[36mindex-DIqO4aiy.js          [39m[1m[2m  1.28 kB[22m[1m[22m[2m │ gzip:   0.61 kB[22m
+[2mdist/client/[22m[2massets/[22m[36mprojects-zNYqR_ph.js       [39m[1m[2m  2.01 kB[22m[1m[22m[2m │ gzip:   0.86 kB[22m
+[2mdist/client/[22m[2massets/[22m[36m_postId-Cf3ak0gn.js        [39m[1m[2m  8.57 kB[22m[1m[22m[2m │ gzip:   3.65 kB[22m
+[2mdist/client/[22m[2massets/[22m[36mmain-BGnLHEE4.js           [39m[1m[2m320.39 kB[22m[1m[22m[2m │ gzip: 101.83 kB[22m
+[32m✓ built in 820ms[39m
+[36mvite v7.3.1 [32mbuilding ssr environment for production...[36m[39m
+Start initial build
+build started ...
+... finished build of 1 collection and 1 document in 2ms
+transforming...
+[33m"createRequestHandler", "defineHandlerCallback", "transformPipeableStreamWithRouter" and "transformReadableStreamWithRouter" are imported from external module "@tanstack/router-core/ssr/server" but never used in "node_modules/@tanstack/start-server-core/dist/esm/index.js".[39m
+[33m"RawStream" is imported from external module "@tanstack/router-core" but never used in "node_modules/@tanstack/start-client-core/dist/esm/index.js".[39m
+[33m"hydrate" and "json" are imported from external module "@tanstack/router-core/ssr/client" but never used in "node_modules/@tanstack/start-client-core/dist/esm/index.js".[39m
+[32m✓[39m 52 modules transformed.
+rendering chunks...
+[2mdist/server/[22m[2massets/[22m[36mstart-HYkvq4Ni.js                       [39m[1m[2m 0.06 kB[22m[1m[22m
+[2mdist/server/[22m[2massets/[22m[36msitemap_._xml-DtdodMa1.js               [39m[1m[2m 0.62 kB[22m[1m[22m
+[2mdist/server/[22m[2massets/[22m[36m_tanstack-start-manifest_v-DMUZ4AM5.js  [39m[1m[2m 1.53 kB[22m[1m[22m
+[2mdist/server/[22m[2massets/[22m[36mindex-CrNlH5cR.js                       [39m[1m[2m 1.91 kB[22m[1m[22m
+[2mdist/server/[22m[2massets/[22m[36mprojects-BGK84Wy3.js                    [39m[1m[2m 2.49 kB[22m[1m[22m
+[2mdist/server/[22m[2massets/[22m[36m_postId-CGBoRiJH.js                     [39m[1m[2m 3.50 kB[22m[1m[22m
+[2mdist/server/[22m[2massets/[22m[36mrouter-DyrOML42.js                      [39m[1m[2m 8.90 kB[22m[1m[22m
+[2mdist/server/[22m[36mserver.js                                      [39m[1m[2m37.76 kB[22m[1m[22m
+[32m✓ built in 118ms[39m
+Exit code: 0
