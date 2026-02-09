@@ -81,10 +81,10 @@ Replace the existing resume-style Next.js site with a clean, minimalist, MDX-fir
 - Biome linting configuration
 
 ### Definition of Done
-- [ ] `bun run build` exits with code 0
-- [ ] Dev server responds with HTTP 200 on `/`, `/n/1`, `/projects`
-- [ ] Blog posts render MDX content with syntax-highlighted code blocks
-- [ ] All pages have proper `<title>` and meta description tags
+- [x] `bun run build` exits with code 0
+- [x] Dev server responds with HTTP 200 on `/`, `/n/1`, `/projects`
+- [x] Blog posts render MDX content with syntax-highlighted code blocks
+- [x] All pages have proper `<title>` and meta description tags
 - [ ] Site deploys to Vercel without errors
 
 ### Must Have
@@ -202,7 +202,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ## TODOs
 
-- [ ] 1. Scaffold TanStack Start Project + Clean Old Code
+- [x] 1. Scaffold TanStack Start Project + Clean Old Code
 
   **What to do**:
   - Delete ALL existing source code and config: `src/`, `public/` (except keep `public/` directory itself), `tailwind.config.ts`, `next.config.js`, `postcss.config.js`, `next-env.d.ts`, `components.json`, `.next/`
@@ -308,7 +308,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 2. Setup Content Collections for MDX
+- [x] 2. Setup Content Collections for MDX
 
   **What to do**:
   - Install Content Collections: `bun add -D @content-collections/core @content-collections/vite @content-collections/mdx`
@@ -399,7 +399,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 3. Build Blog Post Route (`/n/$postId`)
+- [x] 3. Build Blog Post Route (`/n/$postId`)
 
   **What to do**:
   - Create `src/routes/n/$postId.tsx`:
@@ -485,7 +485,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 4. Create MDX Component Overrides + Syntax Highlighting
+- [x] 4. Create MDX Component Overrides + Syntax Highlighting
 
   **What to do**:
   - Install sugar-high: `bun add sugar-high`
@@ -585,7 +585,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 5. Build Projects Page
+- [x] 5. Build Projects Page
 
   **What to do**:
   - Create `src/routes/projects.tsx`:
@@ -654,7 +654,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 6. Build Home Page (Bio + Recent Posts)
+- [x] 6. Build Home Page (Bio + Recent Posts)
 
   **What to do**:
   - Update `src/routes/index.tsx`:
@@ -727,7 +727,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 7. Build Navigation Header + Footer
+- [x] 7. Build Navigation Header + Footer
 
   **What to do**:
   - Update `src/routes/__root.tsx` to include a persistent header and footer:
@@ -812,7 +812,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 8. Global Styles: Dark Theme + Typography + Tailwind CSS 4
+- [x] 8. Global Styles: Dark Theme + Typography + Tailwind CSS 4
 
   **What to do**:
   - Install Tailwind CSS 4: `bun add -D tailwindcss @tailwindcss/vite`
@@ -902,7 +902,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 9. SEO Meta Tags + Sitemap Generation
+- [x] 9. SEO Meta Tags + Sitemap Generation
 
   **What to do**:
   - Add `head()` function to each route for SEO meta tags:
@@ -997,7 +997,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 10. Update CI Pipeline + Gitignore + Biome Config
+- [x] 10. Update CI Pipeline + Gitignore + Biome Config
 
   **What to do**:
   - Update `.github/workflows/build.yml`:
@@ -1093,7 +1093,7 @@ Critical Path: 1 → 2 → 3 → 6 → 7 → 9 → 11
 
 ---
 
-- [ ] 11. Final Build Verification + Visual QA
+- [x] 11. Final Build Verification + Visual QA
 
   **What to do**:
   - Run full build: `bun run build` — must exit 0
@@ -1286,12 +1286,12 @@ grep -c '"next"' package.json | grep "^0$"                # Expected: 0 (no next
 ```
 
 ### Final Checklist
-- [ ] All "Must Have" present (TanStack Start, Content Collections, dark theme, 60ch width, Inter, sugar-high, nav, footer, sitemap, SEO)
-- [ ] All "Must NOT Have" absent (no shadcn, no Framer Motion, no theme toggle, no analytics, no image pipeline)
-- [ ] Build passes (`bun run build` → exit 0)
-- [ ] All 3 pages render (home, blog post, projects)
-- [ ] Blog post 404 works for non-existent posts
-- [ ] Sitemap generated with all routes
-- [ ] CI pipeline updated
-- [ ] Gitignore updated
-- [ ] Biome configured
+- [x] All "Must Have" present (TanStack Start, Content Collections, dark theme, 60ch width, Inter, sugar-high, nav, footer, sitemap, SEO)
+- [x] All "Must NOT Have" absent (no shadcn, no Framer Motion, no theme toggle, no analytics, no image pipeline)
+- [x] Build passes (`bun run build` → exit 0)
+- [x] All 3 pages render (home, blog post, projects)
+- [x] Blog post 404 works for non-existent posts
+- [x] Sitemap generated with all routes
+- [x] CI pipeline updated
+- [x] Gitignore updated
+- [x] Biome configured
