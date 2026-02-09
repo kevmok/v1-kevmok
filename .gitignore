@@ -8,10 +8,12 @@
 # testing
 /coverage
 
-# TanStack Start / Vite
+# TanStack Start / Vite / Nitro
 /dist/
-/.output/
-/.vinxi/
+.output
+.vinxi
+.nitro
+.tanstack
 *.timestamp-*.mjs
 
 # Content Collections
@@ -32,8 +34,10 @@ yarn-error.log*
 # local env files
 .env*.local
 
-# vercel
+# deployment
 .vercel
+.netlify
+.wrangler
 
 # typescript
 *.tsbuildinfo
