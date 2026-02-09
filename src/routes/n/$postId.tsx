@@ -1,4 +1,5 @@
-import { useMDXComponent } from '@content-collections/mdx/react';
+import { mdxComponents } from '@/components/mdx-components';
+import { MDXContent } from '@content-collections/mdx/react';
 import { createFileRoute, notFound } from '@tanstack/react-router';
 import { allPosts } from 'content-collections';
 
@@ -29,11 +30,10 @@ export const Route = createFileRoute('/n/$postId')({
 
 function PostComponent() {
 	const { post } = Route.useLoaderData();
-	const MDXComponent = useMDXComponent(post.mdx);
 
 	return (
-		<article className="prose prose-invert max-w-none">
-			<MDXComponent />
+		<article className="max-w-none">
+			<MDXContent code={post.mdx} components={mdxComponents} />
 		</article>
 	);
 }
