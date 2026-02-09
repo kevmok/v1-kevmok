@@ -85,7 +85,10 @@ Replace the existing resume-style Next.js site with a clean, minimalist, MDX-fir
 - [x] Dev server responds with HTTP 200 on `/`, `/n/1`, `/projects`
 - [x] Blog posts render MDX content with syntax-highlighted code blocks
 - [x] All pages have proper `<title>` and meta description tags
-- [ ] Site deploys to Vercel without errors
+- [ ] Site deploys to Vercel without errors [BLOCKED - Requires user credentials]
+  > **BLOCKER**: This task requires Vercel authentication which cannot be automated.
+  > The agent has completed all preparatory work (vercel.json, GitHub push).
+  > User must complete this task manually via https://vercel.com/new
 
 ### Must Have
 - TanStack Start with file-based routing
