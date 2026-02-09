@@ -13,9 +13,10 @@
 		"isolatedModules": true,
 		"jsx": "react-jsx",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/*": ["./src/*"],
+			"content-collections": ["./.content-collections/generated"]
 		}
 	},
-	"include": ["src/**/*", "app.config.ts", "vite.config.ts"],
+	"include": ["src/**/*", "content-collections.ts", "vite.config.ts"],
 	"exclude": ["node_modules"]
 }
