@@ -1,6 +1,10 @@
 {
-	"active_plan": "/Users/kevin/code/src/github/kevmok/v1-kevmok/.sisyphus/plans/site-revamp.md",
-	"started_at": "2026-02-09T19:08:06.799Z",
-	"session_ids": ["ses_3bd998a96ffeqLH6ZKS9X0E4H7"],
-	"plan_name": "site-revamp"
+	"active_plan": "/Users/kevin/code/src/github/kevmok/v1-kevmok/.sisyphus/plans/site-improvements-v2.md",
+	"started_at": "2026-02-10T14:32:04.612Z",
+	"completed_at": "2026-02-10T14:55:00.000Z",
+	"session_ids": ["ses_3b9d4fcd8fferwqVohKvPyny2z"],
+	"plan_name": "site-improvements-v2",
+	"status": "completed",
+	"tasks_completed": 26,
+	"tasks_total": 26
 }
