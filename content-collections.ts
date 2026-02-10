@@ -11,6 +11,7 @@ const posts = defineCollection({
 		date: z.string().datetime(),
 		description: z.string().optional(),
 		draft: z.boolean().optional().default(false),
+		tags: z.array(z.string()).optional().default([]),
 	}),
 	transform: async (document, context) => {
 		const mdx = await compileMDX(context, document);
