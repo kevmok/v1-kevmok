@@ -8,6 +8,20 @@ import '../styles/app.css';
 
 export const Route = createRootRoute({
 	component: RootComponent,
+	notFoundComponent: () => (
+		<div className="space-y-4">
+			<h1 className="text-2xl font-bold">Page not found</h1>
+			<p className="text-zinc-400">
+				The page you're looking for doesn't exist.
+			</p>
+			<Link
+				to="/"
+				className="text-blue-400 hover:text-blue-300 transition-colors"
+			>
+				← Back to home
+			</Link>
+		</div>
+	),
 	head: () => ({
 		meta: [
 			{
@@ -16,6 +30,15 @@ export const Route = createRootRoute({
 			},
 			{
 				charSet: 'utf-8',
+			},
+		],
+		links: [
+			{ rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
+			{
+				rel: 'alternate',
+				type: 'application/rss+xml',
+				title: 'Kevin Mok RSS Feed',
+				href: '/rss.xml',
 			},
 		],
 	}),
@@ -34,12 +57,12 @@ function RootComponent() {
 						Kevin Mok
 					</Link>
 					<div className="flex gap-6">
-						<a
-							href="/projects"
+						<Link
+							to="/projects"
 							className="text-zinc-400 hover:text-zinc-200 transition-colors"
 						>
 							projects
-						</a>
+						</Link>
 						<a
 							href="https://github.com/kevmok"
 							target="_blank"

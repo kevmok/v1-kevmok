@@ -19,6 +19,21 @@ export const Route = createFileRoute('/')({
 				content:
 					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
 			},
+			{ property: 'og:title', content: 'Kevin Mok' },
+			{
+				property: 'og:description',
+				content:
+					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
+			},
+			{ property: 'og:type', content: 'website' },
+			{ property: 'og:url', content: 'https://kevmok.com' },
+			{ name: 'twitter:card', content: 'summary' },
+			{ name: 'twitter:title', content: 'Kevin Mok' },
+			{
+				name: 'twitter:description',
+				content:
+					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
+			},
 		],
 	}),
 });
@@ -45,7 +60,11 @@ function HomeComponent() {
 					{posts.length > 0 ? (
 						posts.map(post => (
 							<div key={post._meta.path} className="group">
-								<a href={`/n/${post._meta.path}`} className="block">
+								<Link
+									to="/n/$postId"
+									params={{ postId: post._meta.path }}
+									className="block"
+								>
 									<div className="flex items-baseline justify-between">
 										<span className="text-blue-400 group-hover:text-blue-300 transition-colors">
 											{post.title}
@@ -63,7 +82,7 @@ function HomeComponent() {
 											{post.description}
 										</p>
 									)}
-								</a>
+								</Link>
 							</div>
 						))
 					) : (
