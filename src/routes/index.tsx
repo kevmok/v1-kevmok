@@ -16,7 +16,8 @@ export const Route = createFileRoute('/')({
 		meta: [
 			{
 				name: 'description',
-				content: 'Developer and writer.',
+				content:
+					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
 			},
 		],
 	}),
@@ -29,9 +30,12 @@ function HomeComponent() {
 		<div className="space-y-12">
 			<section className="space-y-4">
 				<h1 className="text-3xl font-bold">Kevin Mok</h1>
-				<p className="text-zinc-300">
-					Developer building tools with TypeScript, React, and modern web
-					technologies. Focused on creating efficient, scalable solutions.
+				<p className="text-zinc-300 leading-relaxed">
+					I'm a developer relations engineer at Moveworks helping developers
+					build with AI. My path here went through software engineering and
+					customer success, which taught me that the best tools come from deeply
+					understanding the people who use them. I still love writing code and
+					shipping side projects.
 				</p>
 			</section>
 
