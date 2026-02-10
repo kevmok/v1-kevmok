@@ -44,7 +44,6 @@ function HomeComponent() {
 	return (
 		<div className="space-y-12">
 			<section className="space-y-4">
-				<h1 className="text-3xl font-bold">Kevin Mok</h1>
 				<p className="text-zinc-300 leading-relaxed">
 					I'm a developer relations engineer at Moveworks helping developers
 					build with AI. My path here went through software engineering and
