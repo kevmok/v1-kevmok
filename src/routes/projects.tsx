@@ -40,6 +40,19 @@ export const Route = createFileRoute('/projects')({
 				name: 'description',
 				content: 'Selected projects by Kevin Mok.',
 			},
+			{ property: 'og:title', content: 'Projects | Kevin Mok' },
+			{
+				property: 'og:description',
+				content: 'Selected projects by Kevin Mok.',
+			},
+			{ property: 'og:type', content: 'website' },
+			{ property: 'og:url', content: 'https://kevmok.com/projects' },
+			{ name: 'twitter:card', content: 'summary' },
+			{ name: 'twitter:title', content: 'Projects | Kevin Mok' },
+			{
+				name: 'twitter:description',
+				content: 'Selected projects by Kevin Mok.',
+			},
 		],
 	}),
 });
