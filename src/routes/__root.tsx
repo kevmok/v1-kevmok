@@ -49,12 +49,12 @@ function RootComponent() {
 		<div className="min-h-screen flex flex-col p-8">
 			<HeadContent />
 			<header className="max-w-[60ch] mx-auto w-full mb-12">
-				<nav className="flex justify-between items-center">
+				<nav className="flex gap-6 items-center">
 					<Link
 						to="/"
-						className="text-lg font-medium hover:text-blue-400 transition-colors"
+						className="text-zinc-400 hover:text-zinc-200 transition-colors"
 					>
-						Kevin Mok
+						home
 					</Link>
 					<div className="flex gap-6">
 						<Link
