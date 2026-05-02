@@ -9,12 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WritingRouteImport } from './routes/writing'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
+import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NPostIdRouteImport } from './routes/n/$postId'
-import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as RssDotxmlRouteImport } from './routes/rss[.]xml'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 
+const WritingRoute = WritingRouteImport.update({
+  id: '/writing',
+  path: '/writing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/writing': typeof WritingRoute
   '/n/$postId': typeof NPostIdRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/writing': typeof WritingRoute
   '/n/$postId': typeof NPostIdRoute
 }
 export interface FileRoutesById {
@@ -61,19 +69,33 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/rss.xml': typeof RssDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/writing': typeof WritingRoute
   '/n/$postId': typeof NPostIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/projects' | '/rss.xml' | '/sitemap.xml' | '/n/$postId'
+  fullPaths:
+    | '/'
+    | '/projects'
+    | '/rss.xml'
+    | '/sitemap.xml'
+    | '/writing'
+    | '/n/$postId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/projects' | '/rss.xml' | '/sitemap.xml' | '/n/$postId'
+  to:
+    | '/'
+    | '/projects'
+    | '/rss.xml'
+    | '/sitemap.xml'
+    | '/writing'
+    | '/n/$postId'
   id:
     | '__root__'
     | '/'
     | '/projects'
     | '/rss.xml'
     | '/sitemap.xml'
+    | '/writing'
     | '/n/$postId'
   fileRoutesById: FileRoutesById
 }
@@ -82,11 +104,19 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   RssDotxmlRoute: typeof RssDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  WritingRoute: typeof WritingRoute
   NPostIdRoute: typeof NPostIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/writing': {
+      id: '/writing'
+      path: '/writing'
+      fullPath: '/writing'
+      preLoaderRoute: typeof WritingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -130,14 +160,15 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   RssDotxmlRoute: RssDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  WritingRoute: WritingRoute,
   NPostIdRoute: NPostIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
 
-import type { createStart } from '@tanstack/react-start'
 import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
 declare module '@tanstack/react-start' {
   interface Register {
     ssr: true

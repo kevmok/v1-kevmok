@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { highlight } from 'sugar-high';
 
 function isExternalUrl(url: string): boolean {
@@ -11,35 +11,19 @@ function isExternalUrl(url: string): boolean {
 }
 
 export function H1({ children, ...props }: ComponentPropsWithoutRef<'h1'>) {
-	return (
-		<h1 className="text-2xl font-medium pt-12 mb-0" {...props}>
-			{children}
-		</h1>
-	);
+	return <h1 {...props}>{children}</h1>;
 }
 
 export function H2({ children, ...props }: ComponentPropsWithoutRef<'h2'>) {
-	return (
-		<h2 className="text-xl font-medium mt-8 mb-3" {...props}>
-			{children}
-		</h2>
-	);
+	return <h2 {...props}>{children}</h2>;
 }
 
 export function H3({ children, ...props }: ComponentPropsWithoutRef<'h3'>) {
-	return (
-		<h3 className="text-lg font-medium mt-6 mb-2" {...props}>
-			{children}
-		</h3>
-	);
+	return <h3 {...props}>{children}</h3>;
 }
 
 export function P({ children, ...props }: ComponentPropsWithoutRef<'p'>) {
-	return (
-		<p className="text-zinc-300 leading-relaxed my-4" {...props}>
-			{children}
-		</p>
-	);
+	return <p {...props}>{children}</p>;
 }
 
 export function A({
@@ -51,38 +35,21 @@ export function A({
 
 	if (isExternal) {
 		return (
-			<a
-				href={href}
-				target="_blank"
-				rel="noopener noreferrer"
-				className="text-blue-400 hover:text-blue-300 transition-colors"
-				{...props}
-			>
+			<a href={href} target="_blank" rel="noopener noreferrer" {...props}>
 				{children}
 			</a>
 		);
 	}
 
 	return (
-		<Link
-			to={href}
-			className="text-blue-400 hover:text-blue-300 transition-colors"
-			{...props}
-		>
+		<Link to={href} {...props}>
 			{children}
 		</Link>
 	);
 }
 
 export function Pre({ children, ...props }: ComponentPropsWithoutRef<'pre'>) {
-	return (
-		<pre
-			className="bg-zinc-900 rounded-lg p-4 overflow-x-auto my-6 text-sm"
-			{...props}
-		>
-			{children}
-		</pre>
-	);
+	return <pre {...props}>{children}</pre>;
 }
 
 export function Code({
@@ -104,44 +71,22 @@ export function Code({
 		);
 	}
 
-	return (
-		<code
-			className="bg-zinc-800 px-1.5 py-0.5 rounded text-sm font-mono"
-			{...props}
-		>
-			{children}
-		</code>
-	);
+	return <code {...props}>{children}</code>;
 }
 
 export function Blockquote({
 	children,
 	...props
 }: ComponentPropsWithoutRef<'blockquote'>) {
-	return (
-		<blockquote
-			className="border-l-2 border-zinc-600 pl-4 text-zinc-400 italic my-6"
-			{...props}
-		>
-			{children}
-		</blockquote>
-	);
+	return <blockquote {...props}>{children}</blockquote>;
 }
 
 export function Ul({ children, ...props }: ComponentPropsWithoutRef<'ul'>) {
-	return (
-		<ul className="list-disc pl-5 space-y-1 my-4 text-zinc-300" {...props}>
-			{children}
-		</ul>
-	);
+	return <ul {...props}>{children}</ul>;
 }
 
 export function Ol({ children, ...props }: ComponentPropsWithoutRef<'ol'>) {
-	return (
-		<ol className="list-decimal pl-5 space-y-1 my-4 text-zinc-300" {...props}>
-			{children}
-		</ol>
-	);
+	return <ol {...props}>{children}</ol>;
 }
 
 export function Li({ children, ...props }: ComponentPropsWithoutRef<'li'>) {
@@ -152,10 +97,90 @@ export function Strong({
 	children,
 	...props
 }: ComponentPropsWithoutRef<'strong'>) {
+	return <strong {...props}>{children}</strong>;
+}
+
+export function FigureCard({
+	title = 'Agent Loop',
+	description = 'A minimal loop for iterative reasoning and action.',
+	caption,
+	children,
+}: {
+	title?: string;
+	description?: string;
+	caption?: string;
+	children?: ReactNode;
+}) {
 	return (
-		<strong className="font-medium text-zinc-200" {...props}>
-			{children}
-		</strong>
+		<figure className="figure-card">
+			<div className="figure-card-inner">
+				<div>{children ?? <AgentLoopFigure />}</div>
+				<div>
+					<p className="figure-title">{title}</p>
+					<p className="figure-description">{description}</p>
+				</div>
+			</div>
+			<div className="figure-controls" aria-label="Animation controls">
+				<button className="control-chip" type="button">
+					Pause
+				</button>
+				<button className="control-chip" type="button">
+					0.5x
+				</button>
+				<button className="control-chip" type="button" data-active="true">
+					1x
+				</button>
+				<button className="control-chip" type="button">
+					1.5x
+				</button>
+				<button className="control-chip" type="button">
+					2x
+				</button>
+				<span>{caption ?? 'Step 2 of 4'}</span>
+			</div>
+		</figure>
+	);
+}
+
+export function AgentLoopFigure() {
+	return (
+		<div className="agent-loop" aria-label="Agent loop diagram">
+			<div className="agent-node agent-node-blue">
+				Observe
+				<span>Receive input</span>
+			</div>
+			<div className="agent-node agent-node-yellow">
+				Reason
+				<span>Interpret and plan</span>
+			</div>
+			<div className="agent-node agent-node-green">
+				Act
+				<span>Take action</span>
+			</div>
+			<div className="agent-node agent-node-red">
+				Reflect
+				<span>See results</span>
+			</div>
+		</div>
+	);
+}
+
+export function MarginNote({ children }: { children: ReactNode }) {
+	return <aside className="margin-note">{children}</aside>;
+}
+
+export function Details({
+	summary,
+	children,
+}: {
+	summary: string;
+	children: ReactNode;
+}) {
+	return (
+		<details className="editorial-details">
+			<summary>{summary}</summary>
+			<div className="details-body">{children}</div>
+		</details>
 	);
 }
 
@@ -172,4 +197,8 @@ export const mdxComponents = {
 	ol: Ol,
 	li: Li,
 	strong: Strong,
+	FigureCard,
+	AgentLoopFigure,
+	MarginNote,
+	Details,
 };

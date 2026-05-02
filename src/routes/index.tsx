@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
 		const posts = allPosts
 			.filter(post => !post.draft)
 			.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-			.slice(0, 5);
+			.slice(0, 6);
 
 		return { posts };
 	},
@@ -17,22 +17,22 @@ export const Route = createFileRoute('/')({
 			{
 				name: 'description',
 				content:
-					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
+					'Developer relations engineer writing about AI tools, demos, developer experience, and useful software.',
 			},
 			{ property: 'og:title', content: 'Kevin Mok' },
 			{
 				property: 'og:description',
 				content:
-					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
+					'Developer relations engineer writing about AI tools, demos, developer experience, and useful software.',
 			},
 			{ property: 'og:type', content: 'website' },
-			{ property: 'og:url', content: 'https://kevmok.com' },
+			{ property: 'og:url', content: 'https://kevinmok.com' },
 			{ name: 'twitter:card', content: 'summary' },
 			{ name: 'twitter:title', content: 'Kevin Mok' },
 			{
 				name: 'twitter:description',
 				content:
-					'Developer relations engineer at Moveworks. Building with AI, writing code, shipping side projects.',
+					'Developer relations engineer writing about AI tools, demos, developer experience, and useful software.',
 			},
 		],
 	}),
@@ -42,54 +42,58 @@ function HomeComponent() {
 	const { posts } = Route.useLoaderData();
 
 	return (
-		<div className="space-y-12">
-			<section className="space-y-4">
-				<h1 className="text-3xl font-bold">Kevin Mok</h1>
-				<p className="text-zinc-300 leading-relaxed">
-					I'm a developer relations engineer at Moveworks helping developers
-					build with AI. My path here went through software engineering and
-					customer success, which taught me that the best tools come from deeply
-					understanding the people who use them. I still love writing code and
-					shipping side projects.
-				</p>
-			</section>
+		<div>
+			<h1 className="page-title">Kevin Mok</h1>
 
-			<section className="space-y-4">
-				<h2 className="text-xl font-medium">Recent Posts</h2>
-				<div className="space-y-3">
+			<div className="prose-block">
+				<p>
+					I work in developer relations, helping developers build with{' '}
+					<a href="https://www.moveworks.com/" target="_blank" rel="noreferrer">
+						AI tools
+					</a>
+					. I care about demos that teach, docs people actually read, and
+					software that earns trust through use.
+				</p>
+				<p>
+					My path here moved through software engineering and customer success,
+					which taught me that useful products come from understanding the
+					people who use them. I write about{' '}
+					<Link to="/writing">developer experience</Link>, agents, side
+					projects, and making complex ideas understandable.
+				</p>
+			</div>
+
+			<section aria-labelledby="favorite-writing">
+				<h2 id="favorite-writing" className="section-label">
+					Favorite writing
+				</h2>
+				<ul className="writing-list">
 					{posts.length > 0 ? (
 						posts.map(post => (
-							<div key={post._meta.path} className="group">
-								<Link
-									to="/n/$postId"
-									params={{ postId: post._meta.path }}
-									className="block"
-								>
-									<div className="flex items-baseline justify-between">
-										<span className="text-blue-400 group-hover:text-blue-300 transition-colors">
-											{post.title}
-										</span>
-										<span className="text-sm text-zinc-500">
-											{new Date(post.date).toLocaleDateString('en-US', {
-												year: 'numeric',
-												month: 'short',
-												day: 'numeric',
-											})}
-										</span>
-									</div>
-									{post.description && (
-										<p className="text-sm text-zinc-400 mt-1">
-											{post.description}
-										</p>
-									)}
+							<li key={post._meta.path}>
+								<Link to="/n/$postId" params={{ postId: post._meta.path }}>
+									{post.title}
 								</Link>
-							</div>
+							</li>
 						))
 					) : (
-						<p className="text-zinc-500">No posts yet. Check back soon!</p>
+						<>
+							<li>Building demos that teach</li>
+							<li>LLMs are interfaces, not magic</li>
+							<li>Writing docs people actually read</li>
+						</>
 					)}
-				</div>
+				</ul>
 			</section>
+
+			<p className="inline-nav-sentence">
+				Read <Link to="/writing">writing</Link>, browse{' '}
+				<a href="https://github.com/kevmok" target="_blank" rel="noreferrer">
+					code
+				</a>
+				, see <Link to="/projects">projects</Link>, or{' '}
+				<a href="mailto:hi@kevinmok.com">reach out</a>.
+			</p>
 		</div>
 	);
 }

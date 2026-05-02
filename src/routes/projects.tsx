@@ -4,30 +4,30 @@ const projects = [
 	{
 		title: 'Discord Stock Analyst Broadcaster',
 		description:
-			'Discord bot for stock analysts to broadcast plays across multiple servers, reaching 5000 users.',
+			'Discord bot for analysts to broadcast plays across multiple servers and reach 5,000 users.',
 		url: 'https://github.com/kevmok/discordjs-typescript-template',
 		tags: ['TypeScript', 'Discord.js', 'MongoDB'],
 	},
 	{
 		title: 'ElysiaJS API Starter',
 		description:
-			'Ready-to-go template for kickstarting Bun REST API projects with ElysiaJS & Drizzle ORM.',
+			'A Bun, Elysia, Drizzle, and Zod starter for small REST APIs that need a clean first commit.',
 		url: 'https://github.com/kevmok/elysiajs-api-starter',
-		tags: ['TypeScript', 'Drizzle ORM', 'ElysiaJS', 'Zod', 'SQLite'],
+		tags: ['TypeScript', 'ElysiaJS', 'Drizzle'],
 	},
 	{
 		title: 'Discord TypeScript Bot Template',
 		description:
-			'TypeScript Discord bot with Drizzle ORM and Zod, managing slash commands, rate limits, and permissions.',
+			'TypeScript Discord bot template with slash commands, rate limits, permissions, and database patterns.',
 		url: 'https://github.com/kevmok/discordjs-typescript-template',
-		tags: ['TypeScript', 'Drizzle ORM', 'Zod', 'Discord.js', 'PostgreSQL'],
+		tags: ['TypeScript', 'Discord.js', 'PostgreSQL'],
 	},
 	{
 		title: 'Langchain CLI Companion',
 		description:
-			'CLI template for effortless interaction with Langchain, a compact AI companion for command-driven exploration.',
+			'Command-line experiments for exploring prompts, retrieval, and AI workflows from a terminal.',
 		url: 'https://github.com/kevmok/node-langchain-prompt',
-		tags: ['TypeScript', 'Langchain'],
+		tags: ['TypeScript', 'LangChain', 'AI'],
 	},
 ];
 
@@ -46,7 +46,7 @@ export const Route = createFileRoute('/projects')({
 				content: 'Selected projects by Kevin Mok.',
 			},
 			{ property: 'og:type', content: 'website' },
-			{ property: 'og:url', content: 'https://kevmok.com/projects' },
+			{ property: 'og:url', content: 'https://kevinmok.com/projects' },
 			{ name: 'twitter:card', content: 'summary' },
 			{ name: 'twitter:title', content: 'Projects | Kevin Mok' },
 			{
@@ -59,42 +59,45 @@ export const Route = createFileRoute('/projects')({
 
 function ProjectsComponent() {
 	return (
-		<div className="space-y-8">
-			<h1 className="text-2xl font-bold">Projects</h1>
-			<div className="space-y-6">
-				{projects.map(project => (
-					<div key={project.title} className="group">
-						<a
-							href={project.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="block"
-						>
-							<h2 className="text-lg font-medium text-blue-400 group-hover:text-blue-300 transition-colors">
-								{project.title}
-							</h2>
-							<p className="mt-1 text-zinc-400">{project.description}</p>
-							<div className="mt-2 flex flex-wrap gap-2">
-								{project.tags.map(tag => (
-									<span key={tag} className="text-xs text-zinc-500">
-										{tag}
-									</span>
-								))}
+		<div>
+			<h1 className="archive-page-title">Projects</h1>
+			<p className="archive-intro">
+				Small tools, templates, and experiments. Most of these exist because I
+				wanted a useful starting point, a clearer demo, or a faster way to
+				learn.
+			</p>
+
+			<section
+				className="archive-year projects-list"
+				aria-label="Selected projects"
+			>
+				<div>
+					{projects.map(project => (
+						<article key={project.title} className="archive-row">
+							<div>
+								<a
+									href={project.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="archive-title"
+								>
+									{project.title}
+								</a>
+								<p className="archive-summary">{project.description}</p>
 							</div>
-						</a>
-					</div>
-				))}
-			</div>
-			<div className="pt-6">
-				<a
-					href="https://github.com/kevmok"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-blue-400 hover:text-blue-300 transition-colors"
-				>
-					Check my other projects →
+							<span className="archive-tag">{project.tags.join(' / ')}</span>
+						</article>
+					))}
+				</div>
+			</section>
+
+			<p className="inline-nav-sentence">
+				More experiments live on{' '}
+				<a href="https://github.com/kevmok" target="_blank" rel="noreferrer">
+					GitHub
 				</a>
-			</div>
+				.
+			</p>
 		</div>
 	);
 }
