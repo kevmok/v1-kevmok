@@ -1,6 +1,9 @@
 import { Link, createFileRoute } from '@tanstack/react-router';
 import { allPosts } from 'content-collections';
 
+const editorialLink =
+	'text-[var(--link)] underline decoration-[1px] underline-offset-[2px] transition-colors duration-150 hover:text-[var(--link-hover)]';
+
 export const Route = createFileRoute('/')({
 	component: HomeComponent,
 	loader: async () => {
@@ -43,35 +46,45 @@ function HomeComponent() {
 
 	return (
 		<div>
-			<h1 className="page-title">Kevin Mok</h1>
+			<h1 className="m-0 font-[var(--font-serif)] text-[clamp(56px,8vw,84px)] leading-[0.95] font-normal tracking-[-0.055em] text-[var(--text)] text-balance">
+				Kevin Mok
+			</h1>
 
-			<div className="prose-block">
-				<p>
-					I work in developer relations, helping developers build with{' '}
-					<a href="https://www.moveworks.com/" target="_blank" rel="noreferrer">
+			<div className="mt-[30px] max-w-[650px] space-y-4 font-[var(--font-serif)] text-[18px] leading-[1.58] text-[var(--text)]">
+				<p className="m-0 text-pretty">
+					I help developers build with{' '}
+					<a
+						href="https://nousresearch.com/"
+						className={editorialLink}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						AI tools
 					</a>
-					. I care about demos that teach, docs people actually read, and
-					software that earns trust through use.
+					. Most of my work sits between product, code, demos, and writing.
 				</p>
-				<p>
-					My path here moved through software engineering and customer success,
-					which taught me that useful products come from understanding the
-					people who use them. I write about{' '}
-					<Link to="/writing">developer experience</Link>, agents, side
-					projects, and making complex ideas understandable.
+				<p className="m-0 text-pretty">
+					I care about clear explanations, useful systems, and the small details
+					that make software feel trustworthy.
 				</p>
 			</div>
 
 			<section aria-labelledby="favorite-writing">
-				<h2 id="favorite-writing" className="section-label">
+				<h2
+					id="favorite-writing"
+					className="mt-[54px] mb-[18px] font-[var(--font-sans)] text-[11px] font-[650] tracking-[0.08em] text-[var(--muted)] uppercase"
+				>
 					Favorite writing
 				</h2>
-				<ul className="writing-list">
+				<ul className="m-0 list-disc pl-[21px] font-[var(--font-serif)] text-[18px] leading-[1.72] marker:text-[#a9a19b]">
 					{posts.length > 0 ? (
 						posts.map(post => (
 							<li key={post._meta.path}>
-								<Link to="/n/$postId" params={{ postId: post._meta.path }}>
+								<Link
+									to="/n/$postId"
+									params={{ postId: post._meta.path }}
+									className={editorialLink}
+								>
 									{post.title}
 								</Link>
 							</li>
@@ -86,13 +99,29 @@ function HomeComponent() {
 				</ul>
 			</section>
 
-			<p className="inline-nav-sentence">
-				Read <Link to="/writing">writing</Link>, browse{' '}
-				<a href="https://github.com/kevmok" target="_blank" rel="noreferrer">
+			<p className="mt-[34px] font-[var(--font-serif)] text-[18px] leading-[1.6] text-[var(--text)]">
+				Read{' '}
+				<Link to="/writing" className={editorialLink}>
+					writing
+				</Link>
+				, browse{' '}
+				<a
+					href="https://github.com/kevmok"
+					target="_blank"
+					rel="noreferrer"
+					className={editorialLink}
+				>
 					code
 				</a>
-				, see <Link to="/projects">projects</Link>, or{' '}
-				<a href="mailto:hi@kevinmok.com">reach out</a>.
+				, see{' '}
+				<Link to="/projects" className={editorialLink}>
+					projects
+				</Link>
+				, or{' '}
+				<a href="mailto:hi@kevinmok.com" className={editorialLink}>
+					reach out
+				</a>
+				.
 			</p>
 		</div>
 	);
