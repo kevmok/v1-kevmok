@@ -3,6 +3,7 @@ import {
 	Link,
 	Outlet,
 	createRootRoute,
+	useRouterState,
 } from '@tanstack/react-router';
 import '../styles/app.css';
 
@@ -46,6 +47,11 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+	const pathname = useRouterState({
+		select: state => state.location.pathname,
+	});
+	const showHomepageNotes = pathname === '/';
+
 	return (
 		<div className="flex min-h-dvh flex-col bg-[var(--canvas)] px-[clamp(20px,4vw,52px)] pt-7 pb-1 text-[var(--text)]">
 			<HeadContent />
@@ -104,24 +110,28 @@ function RootComponent() {
 					className="relative pt-[clamp(96px,15vh,160px)] font-[var(--font-sans)] text-[12px] leading-[1.55] text-[var(--muted)] max-[920px]:hidden"
 					aria-hidden="true"
 				>
-					<p className="ml-auto max-w-[132px]">
-						<span className="mb-2 flex flex-col gap-[3px] font-[var(--font-mono)] text-[10px] leading-[1.35] text-[#96908a]">
-							<span>02</span>
-							<span>—</span>
-						</span>
-						<em className="font-[var(--font-serif)] text-[var(--muted)] italic">
-							Clarity is a kind of respect.
-						</em>
-					</p>
-					<p className="absolute right-0 bottom-12 max-w-[132px]">
-						<span className="mb-2 flex flex-col gap-[3px] font-[var(--font-mono)] text-[10px] leading-[1.35] text-[#96908a]">
-							<span>03</span>
-							<span>—</span>
-						</span>
-						<em className="font-[var(--font-serif)] text-[var(--muted)] italic">
-							Systems should serve people.
-						</em>
-					</p>
+					{showHomepageNotes && (
+						<>
+							<p className="ml-auto max-w-[132px]">
+								<span className="mb-2 flex flex-col gap-[3px] font-[var(--font-mono)] text-[10px] leading-[1.35] text-[#96908a]">
+									<span>02</span>
+									<span>—</span>
+								</span>
+								<em className="font-[var(--font-serif)] text-[var(--muted)] italic">
+									Clarity is a kind of respect.
+								</em>
+							</p>
+							<p className="absolute right-0 bottom-12 max-w-[132px]">
+								<span className="mb-2 flex flex-col gap-[3px] font-[var(--font-mono)] text-[10px] leading-[1.35] text-[#96908a]">
+									<span>03</span>
+									<span>—</span>
+								</span>
+								<em className="font-[var(--font-serif)] text-[var(--muted)] italic">
+									Systems should serve people.
+								</em>
+							</p>
+						</>
+					)}
 				</aside>
 			</div>
 

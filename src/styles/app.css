@@ -408,6 +408,23 @@
 		color: var(--text);
 	}
 
+	@media (min-width: 1120px) {
+		.article-prose .margin-note {
+			float: right;
+			clear: right;
+			width: 180px;
+			margin: 4px -260px 22px 34px;
+			padding: 0 0 0 14px;
+			border-left: 1px solid #d8ccbd;
+			background: transparent;
+			font-family: var(--font-serif);
+			font-size: 14px;
+			font-style: italic;
+			line-height: 1.45;
+			color: var(--muted);
+		}
+	}
+
 	.editorial-details {
 		margin: 26px 0;
 		padding: 16px 0;
@@ -443,48 +460,7 @@
 		margin-top: 14px;
 	}
 
-	@media (max-width: 920px) {
-		.site-frame {
-			grid-template-columns: minmax(0, 700px);
-			max-width: 700px;
-		}
-
-		.site-rail,
-		.site-notes {
-			display: none;
-		}
-
-		.site-main {
-			padding-top: clamp(82px, 11vh, 112px);
-			padding-bottom: 74px;
-		}
-	}
-
 	@media (max-width: 680px) {
-		.site-shell {
-			padding: 22px 18px 38px;
-		}
-
-		.site-header {
-			align-items: flex-start;
-			gap: 20px;
-		}
-
-		.site-nav {
-			justify-content: flex-end;
-			gap: 12px;
-		}
-
-		.site-main {
-			padding-top: 64px;
-			padding-bottom: 60px;
-		}
-
-		.site-footer {
-			flex-direction: column;
-			margin-top: auto;
-		}
-
 		.archive-row,
 		.projects-list .archive-row {
 			grid-template-columns: 1fr;
