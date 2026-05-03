@@ -93,7 +93,7 @@ function RootComponent() {
 					aria-hidden="true"
 				>
 					<span className="absolute top-[45%] left-0 block max-w-[78px] -translate-y-1/2">
-						All things considered, useful things.
+						All things considered, ship useful things.
 					</span>
 					<span className="absolute bottom-7 left-0 flex max-w-[88px] flex-col gap-[3px] font-[var(--font-mono)] text-[10px] leading-[1.45] text-[#8b8580]">
 						<span>01</span>
