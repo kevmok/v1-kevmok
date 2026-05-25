@@ -5,6 +5,7 @@ import {
 	createRootRoute,
 	useRouterState,
 } from '@tanstack/react-router';
+import { ConstructionBanner } from '../components/ConstructionBanner';
 import '../styles/app.css';
 
 const quietLink =
@@ -86,6 +87,7 @@ function RootComponent() {
 					</a>
 				</nav>
 			</header>
+			<ConstructionBanner />
 
 			<div className="mx-auto grid w-full max-w-[1180px] flex-1 grid-cols-[112px_minmax(0,700px)_minmax(170px,1fr)] gap-x-[clamp(38px,5vw,76px)] max-[920px]:block max-[920px]:max-w-[700px]">
 				<aside
